@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#0A0F1E"
+    android:padding="32dp">
+
+    <!-- Lock Icon -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔒"
+        android:textSize="80sp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Лимит исчерпан"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- App Name -->
+    <TextView
+        android:id="@+id/tvBlockedAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Приложение"
+        android:textColor="#44BB88"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="2dp"
+        android:background="#1A2744"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Time used -->
+    <TextView
+        android:id="@+id/tvTimeUsedTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Использовано сегодня: 30 мин"
+        android:textColor="#8899BB"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Countdown -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="20dp"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="До сброса"
+            android:textColor="#667799"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvResetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- Motivational text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ты достиг дневного лимита.\nВернись завтра!"
+        android:textColor="#445566"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Go Home Button -->
+    <Button
+        android:id="@+id/btnGoHome"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="🏠 На главный экран"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/btn_blue"/>
+
+</LinearLayout>

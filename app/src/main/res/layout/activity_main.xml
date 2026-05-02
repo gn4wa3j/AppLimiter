@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0F1E"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⏱ AppLimiter"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔴 Остановлен"
+                android:textColor="#8899BB"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- No App Selected Card -->
+        <LinearLayout
+            android:id="@+id/tvNoApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_background"
+            android:padding="32dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📱"
+                android:textSize="48sp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выберите приложение для отслеживания"
+                android:textColor="#8899BB"
+                android:textSize="14sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- App Info Card -->
+        <LinearLayout
+            android:id="@+id/cardAppInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <!-- App header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/ivAppIcon"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginEnd="14dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvCurrentApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Приложение"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvAppPackage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="package.name"
+                        android:textColor="#556688"
+                        android:textSize="11sp"
+                        android:ellipsize="end"
+                        android:maxLines="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Circular Progress -->
+            <com.applimiter.CircularProgressView
+                android:id="@+id/circularProgress"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Stats -->
+            <TextView
+                android:id="@+id/tvLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Лимит: 30 мин"
+                android:textColor="#8899BB"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvTimeUsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Использовано: 00 мин 00 сек"
+                android:textColor="#AABBCC"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvTimeLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Осталось: 30 мин 00 сек"
+                android:textColor="#44BB88"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:progressDrawable="@drawable/progress_drawable"
+                android:max="100"
+                android:progress="0"/>
+
+        </LinearLayout>
+
+        <!-- Buttons Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnSelectApp"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="📱 Выбрать приложение"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:background="@drawable/btn_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnSetLimit"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="⏰ Установить лимит"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:background="@drawable/btn_purple"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnToggleService"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="▶ Запустить мониторинг"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:background="@drawable/btn_green"/>
+        </LinearLayout>
+
+        <!-- Info Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background_info"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ℹ️ Как это работает"
+                android:textColor="#AABBDD"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Время суммируется за весь день\n• Сброс всегда в 00:00\n• Мониторинг работает в фоне\n• При достижении лимита — экран блокировки"
+                android:textColor="#667799"
+                android:textSize="12sp"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#0D1526">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Часы"
+        android:textColor="#8899BB"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#445566"
+        android:background="@drawable/edit_text_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Минуты"
+        android:textColor="#8899BB"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etMinutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="30"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#445566"
+        android:background="@drawable/edit_text_bg"
+        android:padding="12dp"/>
+
+</LinearLayout>
